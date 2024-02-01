@@ -1,27 +1,118 @@
-# Ecommerce
+# API Documentation for Ecommerce Project API
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
+This Git repository contains the Java Spring Boot source code for an e-commerce backend system with a RESTful API for browsing products, adding to cart, placing orders, and checking out. Built with a modular MVC architecture and backed by MySQL, it includes unit tests and documentation.
 
-## Development server
+**Base URL**:-  [Api Link](https://e-commerce-server-production-0873.up.railway.app)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Api Docs
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Welcome to the documentation for the Ecommerce Project API! This API provides a set of endpoints and functionalities to interact with our eCommerce platform programmatically. With this API, you can build applications, integrations, and automate various tasks related to our online store.
 
-## Build
+**Api Docs**:-  [Api Docs Link](https://e-commerce-server-production-0873.up.railway.app/swagger-ui/index.html)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Authentication
 
-## Running unit tests
+All protected endpoints require the `Authorization` header with a valid token.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Endpoints
 
-## Running end-to-end tests
+### Update Cart Item
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **URL**: `/api/cart_items/{cartItemId}`
+- **Method**: PUT
+- **Tags**: cart-item-controller
+- **Request Parameters**:
+  - `cartItemId` (integer, int64, required)
+- **Request Headers**:
+  - `Authorization` (string, required)
+- **Request Body**:
+  ```json
+  {
+    "$ref": "#/components/schemas/CartItem"
+  }
+  ```
+- **Responses**:
+  - 200 OK
+    ```json
+    {
+      "$ref": "#/components/schemas/CartItem"
+    }
+    ```
 
-## Further help
+### Delete Cart Item
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **URL**: `/api/cart_items/{cartItemId}`
+- **Method**: DELETE
+- **Tags**: cart-item-controller
+- **Request Parameters**:
+  - `cartItemId` (integer, int64, required)
+- **Request Headers**:
+  - `Authorization` (string, required)
+- **Responses**:
+  - 200 OK
+    ```json
+    {
+      "$ref": "#/components/schemas/ApiResponse"
+    }
+    ```
+
+### Add Item to Cart
+
+- **URL**: `/api/cart/add`
+- **Method**: PUT
+- **Tags**: cart-controller
+- **Request Headers**:
+  - `Authorization` (string, required)
+- **Request Body**:
+  ```json
+  {
+    "$ref": "#/components/schemas/AddItemRequest"
+  }
+  ```
+- **Responses**:
+  - 200 OK
+    ```json
+    {
+      "$ref": "#/components/schemas/ApiResponse"
+    }
+    ```
+
+... [continue documenting other endpoints](https://e-commerce-server-production-0873.up.railway.app/swagger-ui/index.html)
+
+## Components
+
+### Schemas
+
+- CartItem
+- ApiResponse
+- AddItemRequest
+- Product
+- Order
+- User
+- AuthResponse
+- ReviewRequest
+- Review
+- RatingRequest
+- Rating
+- PaymentLinkResponse
+- Address
+- CreateProductRequest
+- PageProduct
+
+## Servers
+
+- Server 1:
+  - URL: `http://localhost:5454`
+  - Description: Generated server URL
+
+## Contact
+
+For any queries or issues, please contact **Ashok Zarmariya** at `ashokzarmariya@gmail.com`.
+
+## License
+
+This API is licensed under **Ashok Zarmariya**.
+
+
+
